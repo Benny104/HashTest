@@ -1,6 +1,7 @@
 #Author: Benny
 import hashlib
 list = open("PassList.txt")
+passlist = [line.strip() for line in list]
 
 #Deals with encoding and hashing the user input
 z = str(input("Please input a word: "))
@@ -10,7 +11,7 @@ x.update(zv2)
 y = x.hexdigest()
 
 #Deals with comparing the user's hashed word with the hashed words in the list
-for i in list:
+for i in passlist:
     iHashed = hashlib.sha256()
     iv2 = i.encode()
     iHashed.update(iv2)
@@ -18,8 +19,6 @@ for i in list:
 
     if iy == y:
         print("The word you entered was:", i)
-        print("The hash was:", iy)
-
-
+        print("The hashed word was:", iy)
 
 
