@@ -18,9 +18,7 @@ for i in list:
 
     if iy == y:
         print("The word you entered was:", i)
-        print("The hashed word was:", iy)
-
-    print(iy)
+        print("The hash was:", iy)
 
 
 
